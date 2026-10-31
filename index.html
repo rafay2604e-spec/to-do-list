@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ display:flex;justify-content:center;align-items:center;
+ background:linear-gradient(120deg,#000,#142b3d);
+ font-family:Arial;color:white;
+}
+.container{width:85%;max-width:700px;text-align:center}
+h1{font-size:55px;margin-bottom:55px}
+.add{display:flex;margin-bottom:45px}
+input{
+ padding:20px;border:0;outline:0;
+ background:#607987;color:white;font-size:20px;
+}
+input::placeholder{color:#ddd}
+#taskInput{width:85%;border-radius:50px 0 0 50px}
+button{
+ background:black;color:white;border:0;
+ padding:15px;font-size:18px;cursor:pointer;
+}
+.panel{background:#ddd;padding:35px;border-radius:25px}
+#search{width:100%;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:22px}
+th{background:#000;color:white;padding:20px}
+td{background:#607987;color:white;padding:15px}
+td button{background:transparent;padding:5px}
+@media(max-width:500px){
+ h1{font-size:40px}
+ .panel{padding:15px}
+ table{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Todo List</h1>
+<div class="add">
+<input id="taskInput" placeholder="Enter Any Task.....">
+<button onclick="addTask()">Add</button>
+</div>
+<div class="panel">
+<input id="search" placeholder="Search Any Todo...." oninput="showTasks()">
+<table>
+<thead><tr><th>#</th><th>Details</th><th>Actions</th></tr></thead>
+<tbody id="taskList"></tbody>
+</table>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
+
